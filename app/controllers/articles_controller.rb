@@ -1,8 +1,10 @@
 class ArticlesController < ApplicationController
 
-  def show
+  def new
   end
 
-  def new
+  # bắt sự kiện submit
+  def create
+    render plain: params[:article].inspect
   end
 end
