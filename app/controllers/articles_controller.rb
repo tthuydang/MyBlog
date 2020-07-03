@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ArticlesController < ApplicationController
 
   def new; end
@@ -8,6 +9,28 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id]) # id duoc tao tu dong va tang dan cho moi doi tuong Article dc tao ra
+  end
+
+  # hien thi trang edit
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  # thuc hien update
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params) == true
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
   end
 
   # bắt sự kiện submit

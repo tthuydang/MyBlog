@@ -1,6 +1,5 @@
-<h1>Create a New Article!</h1>
-<%= form_for(:article, url: articles_path) do |f| %>
-  <p><b>action: </b><%= articles_path %></p>
+<h1>Edit Article</h1>
+<%= form_for @article do |f| %>
   <p>
     <%= f.label :title %> <br>
     <%= f.text_field :title %>
@@ -13,3 +12,4 @@
     <%= f.submit %>
   </p>
 <%end %>
+

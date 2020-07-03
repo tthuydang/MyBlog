@@ -6,10 +6,14 @@
   </tr>
   <% @articles.each do |article| %>
     <tr>
-      <td><%= article.title %></td>
+      <td>| <%= article.title %></td>
       <!-- <td><%#= article.text %></td>   text quá dài-->
-      <td><%= truncate(article.text, length: 75) %></td>   <!-- rút gọn text 75 ký tự-->
-      <td><%= link_to 'Show Detail', article_path(article) %></td>
+      <td>| <%= truncate(article.text, length: 75) %></td>   <!-- rút gọn text 75 ký tự-->
+      <td>| <%= link_to('Show Detail', article_path(article)) %></td>
+      <td>| <%= link_to('Edit', edit_article_path(article)) %></td>
+      <td>| <%= link_to('Delete', article_path(article),
+                       method: :delete,
+                       data: { confirm: 'Are you certain????' })%> |</td>
     </tr>
   <% end %>
 </table>
