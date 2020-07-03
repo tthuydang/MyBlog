@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
 
   def new; end
 
+  def index
+    @articles = Article.all
+  end
+
   def show
     @article = Article.find(params[:id]) # id duoc tao tu dong va tang dan cho moi doi tuong Article dc tao ra
   end
