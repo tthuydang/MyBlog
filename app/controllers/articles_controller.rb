@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
 
-  def new
-  end
+  def new; end
 
   # bắt sự kiện submit
   def create
