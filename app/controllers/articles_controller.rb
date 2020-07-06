@@ -36,6 +36,11 @@ class ArticlesController < ApplicationController
   # bắt sự kiện submit
   def create
     # render plain: params[:article].inspect
+
+    # cach 1:
+    # @article = Article.create(article_params)
+
+    # cach 2:
     @article = Article.new(article_params)
     @article.save
 
