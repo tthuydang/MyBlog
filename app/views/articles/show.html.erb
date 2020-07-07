@@ -9,15 +9,18 @@
 
 <hr>
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
+<% @article.comments.each do |cmt| %>
   <p>
     <strong>Commenter:</strong>
-    <%= comment.commenter %>
+    <%= cmt.commenter %>
   </p>
   <p>
     <strong>Comment:</strong>
-    <%= comment.body %>
+    <%= cmt.body %>
   </p>
+  <p><%= link_to('Delete Comment', [cmt.article, cmt],
+                 method: :delete,
+                 data: { confirm: 'Are you Certain???' }) %></p>
 <% end %>
 
 <hr>
