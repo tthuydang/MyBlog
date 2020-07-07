@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 class ArticlesController < ApplicationController
 
-  def new; end
+  def new
+    @article = Article.new # tao doi duong de ben views goi ham ra chay
+  end
 
   def index
     @articles = Article.all
@@ -41,10 +43,15 @@ class ArticlesController < ApplicationController
     # @article = Article.create(article_params)
 
     # cach 2:
-    @article = Article.new(article_params)
-    @article.save
+    # @article = Article.new(article_params)
+    # @article.save
 
-    redirect_to @article # this will redirect it to the show page and display the article we just created
+    @article = Article.new(article_params)
+    if @article.save # neu luu thanh cong
+      redirect_to @article # this will redirect it to the show page and display the article we just created
+    else # neu luu that bai
+      render 'new'
+    end
   end
 
   private
