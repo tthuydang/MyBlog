@@ -1,0 +1,15 @@
+<h2>Comments</h2>
+<% @article.comments.each do |cmt| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= cmt.commenter %>
+  </p>
+  <p><%= cmt.created_at %></p>
+  <p>
+    <strong>Comment:</strong>
+    <%= cmt.body %>
+  </p>
+  <p><%= link_to('Delete Comment', [cmt.article, cmt],
+                 method: :delete,
+                 data: { confirm: 'Are you Certain???' }) %></p>
+<% end %>
