@@ -15,16 +15,44 @@
  *= require_self
  */
 @import "bootstrap";
+@import "welcome";
+@import "navigation";
+@import "footer";
+
+/* cai nay cua bootstrap */
+/* Show it is fixed to the top */
+body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    background-color: #ffddee;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.linktxt {
+    color: #deddee;
+}
+
+.linktxt:hover {
+    color: #ffffff;
+}
 
 .container {
     padding-top: 15px;
 }
 
 thead {
-    background-color: #dddddd;
+    background-color: #553344;
+    color: #ffffff;
 }
 
 .form-control {
     background-color: #efeeef;
     border: 2px solid #eeccdd;
+}
+
+.jumbotron {
+    background-color: #ffffff;
 }
