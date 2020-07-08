@@ -10,6 +10,7 @@
     <%= cmt.body %>
   </p>
   <p><%= link_to('Delete Comment', [cmt.article, cmt],
+                 class: 'btn btn-md btn-danger',
                  method: :delete,
                  data: { confirm: 'Are you Certain???' }) %></p>
 <% end %>

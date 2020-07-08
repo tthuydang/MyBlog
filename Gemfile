@@ -10,16 +10,16 @@ gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
-gem 'bootstrap', '~> 4.5'
-gem 'jquery-rails', '~> 4.4'
 gem 'sass-rails', '>= 6'
-gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails', '~> 4.4'
+gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

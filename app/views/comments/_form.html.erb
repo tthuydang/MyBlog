@@ -1,15 +1,16 @@
 <!-- Form Partial for Comments -->
 <h2>Add Comment</h2>
 <%= form_for([@article, @article.comments.build]) do |f| %>
+  <div class="field" style="100%;"></div>
   <p>
     <%= f.label :commenter %> <br>
-    <%= f.text_field :commenter %>
+    <%= f.text_field :commenter, class: 'form-control' %>
   </p>
   <p>
     <%= f.label :body %> <br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: 'form-control' %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-lg btn-success ' %>
   </p>
 <% end %>
