@@ -1,0 +1,11 @@
+<tr>
+  <td><%= article.title %></td>
+  <!-- <td><%#= article.text %></td>   text quá dài-->
+  <td><%= truncate(article.text, length: 75) %></td>   <!-- rút gọn text 75 ký tự-->
+  <td><%= link_to('Detail', article_path(article), class: 'btn -btn-sm btn-info') %></td>
+  <td><%= link_to('Edit', edit_article_path(article), class: 'btn btn-sm btn-warning') %></td>
+  <td><%= link_to('Delete', article_path(article),
+                  class: 'btn btn-sm btn-danger',
+                  method: :delete,
+                  data: { confirm: 'Are you certain????' })%></td>
+</tr>

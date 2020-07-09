@@ -2,19 +2,7 @@
 <div class="col"></div>
 <div class="col-md-7">
   <h1>Edit Article</h1>
-  <%= form_for @article do |f| %>
-    <p>
-      <%= f.label :title %> <br>
-      <%= f.text_field :title, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.label :text %> <br>
-      <%= f.text_area :text, class: 'form-control' %>
-    </p>
-    <p>
-      <%= f.submit class: 'btn btn-lg btn-success' %>
-    </p>
-  <%end %>
+  <%= render('shared/form_save_article') %>
 </div>
 <div class="row"></div>
 <div class="col"></div>
