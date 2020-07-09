@@ -2,6 +2,15 @@
 class ArticlesController < ApplicationController
   http_basic_authenticate_with(name: "huy", password: "huy", except: [:index, :show])
 
+  def search
+    if params[:search].blank?
+      @articles = Article.all
+    else
+      # @articles = Article.search(params[:search]) # tai sao sai ????
+      @articles = Article.search(params)
+    end
+  end
+
   def new
     @article = Article.new # tao doi duong de ben views goi ham ra chay
   end
