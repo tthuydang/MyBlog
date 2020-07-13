@@ -3,12 +3,7 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with(name: "huy", password: "huy", except: [:index, :show])
 
   def search
-    if params[:search].blank?
-      @articles = Article.all
-    else
-      # @articles = Article.search(params[:search]) # tai sao sai ????
-      @articles = Article.search(params)
-    end
+    @articles = params[:search].blank? ? Article.all : Article.search(params) # ham search tu minh viet ra, nhan vao tham so la params chu ko phai la params[:search]
   end
 
   def new
