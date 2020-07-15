@@ -32,6 +32,39 @@
       <li class="nav-item">
         <a class="nav-link " href="#">About</a>
       </li>
+
+      <li class="nav-item">
+
+        <% if current_user && current_user.admin? %>
+          <li class="nav-item">
+            <%= active_link_to('Subscribers', 'subscribers', 'index', subscribers_path, "active_nav-link") %>
+          </li>
+          <li class="nav-item active_nav-link">
+            Hi, <%= current_user.userid %> !
+          </li>
+          <li class="nav-item">
+            <%= link_to('Logout', session_path('active'), class: "active_nav-link",
+                        method: :delete, data: {confirm: "Are you certain????"}) %>
+          </li>
+
+        <% elsif current_user %> <!-- not an admin - only a user -->
+          <li class="nav-item active_nav-link">
+            Hi <%= current_user.userid %>
+          </li>
+          <li class="nav-item">
+            <%= link_to('Logout', session_path('active'), class: "active_nav-link",
+                        method: :delete, data: {confirm: "Are you certain????"}) %>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <%= link_to('Create Account', new_user_path, class: "active_nav-link") %>
+          </li>
+          <%= link_to('Sign In', new_session_path, class: "active_nav-link") %>
+        <% end %>
+
+      </li>
+
     </ul>
   </div>
 </nav>

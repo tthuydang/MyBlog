@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with(name: "huy", password: "huy", except: [:index, :show])
+  # http_basic_authenticate_with(name: "huy", password: "huy", except: [:index, :show])
+  before_action :admin_authorize, :except => [:index, :show, :search] # ngoai tru 3 action nay, con lai phai co quyen admin
 
   def search
     @articles = params[:search].blank? ? Article.all : Article.search(params) # ham search tu minh viet ra, nhan vao tham so la params chu ko phai la params[:search]

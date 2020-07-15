@@ -1,4 +1,6 @@
-<h2>Comments</h2>
+<br>
+<h2 style="color: green">Comments:</h2>
+<hr>
 <% @article.comments.each do |cmt| %>
   <p>
     <strong>Commenter:</strong>
@@ -9,8 +11,11 @@
     <strong>Comment:</strong>
     <%= cmt.body %>
   </p>
+<% if current_user && current_user.admin? %>
   <p><%= link_to('Delete Comment', [cmt.article, cmt],
                  class: 'btn btn-md btn-danger',
                  method: :delete,
                  data: { confirm: 'Are you Certain???' }) %></p>
+<% end %>
+  <hr>
 <% end %>

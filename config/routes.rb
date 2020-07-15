@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-
-  get 'welcome/index'
-
+  # mấy resources này tự sinh ra các action và path tương ứng
+  resources :sessions
+  resources :users
+  resources :subscribers
   resources :articles do
     resources :comments
     collection do
@@ -10,8 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :subscribers
-
+  get 'welcome/index'
   root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
